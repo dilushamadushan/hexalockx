@@ -70,7 +70,7 @@ For a concise standalone description of the algorithm, see
 For the runtime class/method execution order, see
 [CODE_EXECUTION_ORDER.md](doc/CODE_EXECUTION_ORDER.md).
 Contribution and testing guidance is available in
-[contribution.md](doc/contribution.md).
+[CONTRIBUTING.md](doc/CONTRIBUTING.md).
 
 HexaLock-X uses 16-byte blocks (128 bits) and eight rounds. Every byte is
 represented internally as an integer in the range `0..255`.
