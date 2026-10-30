@@ -8,15 +8,8 @@ public class Main{
     public static void main(String[] args){
         boolean run = true;
         while(run){
-            System.out.println("\n===== HexaLock-X =====");
-            System.out.println("1. Encrypt text");
-            System.out.println("2. Decrypt text");
-            System.out.println("3. Avalanche test");
-            System.out.println("4. Show key info (round keys, S-box)");
-            System.out.println("5. Tamper test");
-            System.out.println("6. Cryptanalysis suite (Avalanche 1000, Entropy, Chi-Square, Histogram)");
-            System.out.println("7. Exit");
-            System.out.print("Choice: ");
+            printMenu();
+            System.out.print("Select an option [1-7]: ");
             String c = sc.nextLine().trim();
             try{
                 switch(c){
@@ -27,13 +20,34 @@ public class Main{
                     case "5" : doTamper(); break;
                     case "6" : doCryptoAnalysis(); break;
                     case "7" : case "exit": run = false; break;
-                    default : System.out.println("Invalid choice");
+                    default :
+                        System.out.println("\nInvalid choice. Please select a number from 1 to 7.");
                 }
             }catch(IllegalArgumentException e){
-                System.out.println("Error : " + e.getMessage());
+                System.out.println("\nError: " + e.getMessage());
             }
         }
-        System.out.println("Goodbye..!");
+        System.out.println("\nThank you for using HexaLock-X. Goodbye!");
+    }
+
+    static void printMenu() {
+        System.out.println();
+        System.out.println("+------------------------------------------------------------------+");
+        System.out.println("|                         HEXALOCK-X                               |");
+        System.out.println("|             Encryption & Cryptographic Analysis                  |");
+        System.out.println("+------------------------------------------------------------------+");
+        System.out.println("  ENCRYPTION                                                      ");
+        System.out.println("    1. Encrypt text       Protect plaintext with a password         ");
+        System.out.println("    2. Decrypt text       Recover plaintext from Base64 ciphertext  ");
+        System.out.println("                                                                  ");
+        System.out.println("  ANALYSIS & TESTING                                              ");
+        System.out.println("    3. Avalanche test     Demonstrate one-bit diffusion             ");
+        System.out.println("    4. Key information    View round keys, S-box, and layouts       ");
+        System.out.println("    5. Tamper test        Demonstrate integrity protection          ");
+        System.out.println("    6. Cryptanalysis      Entropy, histograms, chi-square, and      ");
+        System.out.println("                         1000-trial avalanche report              ");
+        System.out.println("                                                                  ");
+        System.out.println("  7. Exit                                                         ");
     }
     
     static void doEncrypt() {

@@ -28,7 +28,7 @@ wrong-password rejection, tamper detection, and statistical properties.
 
 ## 2. Interactive application
 
-`Main` displays this menu:
+`Main` displays a boxed menu with the following options:
 
 | Choice | Operation |
 |---|---|
